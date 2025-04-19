@@ -60,3 +60,16 @@
   border-bottom: 2px solid #8f4407;
 
 }
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  width: clamp(300px, 90vw, 1200px);
+  margin: auto;
+  margin-top: 15vh;
+  color: #fff;
+  position: relative;
+}
