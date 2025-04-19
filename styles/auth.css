@@ -1,0 +1,21 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: clamp(300px, 90vw, 1200px);
+  height: 75px;
+  margin: 0 auto;
+}
+
+.icon {
+  height: clamp(50px, 6vw, 70px);
+}
+
+.icon .logo {
+  color: #ff7200;
+  font-size: clamp(15px, 3vw, 35px);
+  font-family: Arial;
+  padding-left: 20px;
+  padding-top: 10px;
+  margin: 5px 0 0 5px;
+}
