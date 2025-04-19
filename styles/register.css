@@ -1,0 +1,21 @@
+.pass-container {
+  display: flex;
+  gap: clamp(8px, 1vw, 20px);
+  margin-top: 30px;
+}
+
+.pass-container .pass {
+  flex: 1;
+  height: 35px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #ff7200;
+  color: #fff;
+  font-size: clamp(14px, 1.2vw, 15px);
+  letter-spacing: 1px;
+  font-family: sans-serif;
+}
+
+.pass-container .pass {
+  margin-top: 0;
+}
