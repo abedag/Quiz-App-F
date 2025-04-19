@@ -1,3 +1,8 @@
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -43,4 +48,15 @@
   font-family: Arial;
   font-weight: bold;
   transition: 0.3s ease;
+}
+
+.menu ul li a:hover {
+  color: #ff7200;
+  border-bottom: 2px solid #ff7200;
+}
+
+.menu ul li a:active {
+  color: #8f4407;
+  border-bottom: 2px solid #8f4407;
+
 }
