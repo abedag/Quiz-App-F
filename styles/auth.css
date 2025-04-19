@@ -97,3 +97,20 @@
   font-size: clamp(14px, 1.3vw, 16px);
   width: 50vw;
 }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: clamp(250px, 90vw, 340px);
+  height: auto;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.8) 50%, rgba(12, 12, 12, 0.8) 70%);
+  position: absolute;
+  top: 20px;
+  right: clamp(10px, 4vw, 800px);
+  transform: none;
+  position: static;
+  align-self: flex-start;
+  border-radius: 10px;
+  padding: 25px;
+  margin: 5rem auto;
+}
