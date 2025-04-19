@@ -114,3 +114,15 @@
   padding: 25px;
   margin: 5rem auto;
 }
+
+.form h2 {  
+  width: clamp(180px, 60%, 390px);
+  font-family: sans-serif;
+  text-align: center;
+  color: #ff7200;
+  font-size: clamp(17px, 2.2vw, 21px);
+  background-color: #fff;
+  border-radius: 10px;
+  margin: 2px auto;
+  padding: 8px;
+}
