@@ -19,3 +19,28 @@
   padding-top: 10px;
   margin: 5px 0 0 5px;
 }
+
+.menu {
+  display: flex;
+  margin-left: clamp(3px, 5vw, 40px);
+  height: 70px;
+}
+
+.menu ul {
+  display: flex;
+}
+
+.menu ul li {
+  list-style: none;
+  margin-left: clamp(10px, 5vw, 62px);
+  margin-top: 27px;
+  font-size: clamp(12px, 1.2vw, 20px);
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-family: Arial;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
