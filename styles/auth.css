@@ -82,3 +82,18 @@
   letter-spacing: 2px;
   width: 55vw;
 }
+
+.content span {
+  color: #ff7200;
+  font-size: clamp(30px, 5vw, 55px);
+}
+
+.content .par {
+  padding-left: 20px;
+  padding-bottom: 25px;
+  font-family: Arial;
+  letter-spacing: 1.2px;
+  line-height: 1.8em;
+  font-size: clamp(14px, 1.3vw, 16px);
+  width: 50vw;
+}
