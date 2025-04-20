@@ -62,3 +62,33 @@ body {
   font-family: sans-serif;
 }
 
+.quiz-section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.quiz-items {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.quiz-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-grow: 1;
+  flex: 1 1 clamp(150px, 40vw, 200px);
+  background-color: #ff7200;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: clamp(16px, 1.4vw, 25px);
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
