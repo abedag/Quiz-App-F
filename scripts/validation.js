@@ -84,4 +84,12 @@ function getSignupFormErrors(email, username, pass, confirm_pass) {
   return errors;
 }
 
+function getLoginFormErrors(email, pass) {
+  const errors = [];
+
+  if (!email) errors.push("Email is required");
+  if (!pass) errors.push("Password is required");
+
+  return errors;
+}
 
