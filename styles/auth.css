@@ -125,6 +125,7 @@
 
 .btn:hover {
   background: #fff;
+  color: #ff7200;
 }
 
 .btn:active {
@@ -148,4 +149,24 @@
 .form .link a {
   text-decoration: none;
   color: #ff7200;
+}
+
+.message {
+  margin-top: 10px;
+  font-weight: bold;
+  padding: 8px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.error {
+  color: #ff4d4d;
+  background-color: #ffe5e5;
+  border: 1px solid #ff9999;
+}
+
+.success {
+  color: #4CAF50;
+  background-color: #e6ffed;
+  border: 1px solid #8de0a5;
 }
