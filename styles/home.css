@@ -12,3 +12,34 @@ body {
   font-size: clamp(15px, 2vw, 35px);
 }
 
+.home-content {
+  width: clamp(300px, 90vw, 1200px);
+  margin: auto;
+  margin-top: 12vh;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding: 0 20px;
+}
+
+.welcome-box {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.welcome-title {
+  font-size: clamp(22px, 4vw, 36px);
+  color: #ff7200;
+  font-family: 'Times New Roman', serif;
+  margin-bottom: 10px;
+}
+
+.welcome-msg {
+  font-family: Arial, sans-serif;
+  font-size: clamp(14px, 1.4vw, 18px);
+  line-height: 1.6em;
+}
+
