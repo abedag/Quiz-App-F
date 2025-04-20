@@ -41,6 +41,30 @@ if (form) {
         showErrors(errors);
       }
 
+    } else {
+
+      errors = getLoginFormErrors(email_input.value, pass_input.value);
+
+      if (errors.length === 0) {
+        const savedUser = JSON.parse(localStorage.getItem('quizUser'));
+
+        if (
+          savedUser &&
+          savedUser.email === email_input.value &&
+          savedUser.password === pass_input.value
+        ) {
+          error_message.className = 'message success';
+          error_message.innerText = `✅ Welcome back, ${savedUser.username}! Redirecting...`;
+          setTimeout(() => {
+            window.location.href = "./public/home.html";
+          }, 2000);
+        } else {
+          showErrors(["❌ Invalid email or password."]);
+        }
+
+      } else {
+        showErrors(errors);
+      }
     }
   })
 }
