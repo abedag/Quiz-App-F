@@ -93,3 +93,7 @@ function getLoginFormErrors(email, pass) {
   return errors;
 }
 
+function showErrors(errors) {
+  error_message.className = 'message error';
+  error_message.innerText = errors.join(". ");
+}
