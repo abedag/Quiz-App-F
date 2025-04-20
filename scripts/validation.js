@@ -24,19 +24,38 @@ if (form) {
       );
 
       if (errors.length === 0) {
-        const user = {
-          email: email_input.value,
-          username: username_input.value,
-          password: pass_input.value,
+        const users = JSON.parse(localStorage.getItem('quizUsers')) || [];
+
+        const existingUser = users.find(
+          user =>
+            user.email === email_input.value || user.username === username_input.value
+        );
+
+        if (existingUser) {
+          if (existingUser.email === email_input.value) {
+            errors.push("❌ This email is already registered");
+          }
+          if (existingUser.username === username_input.value) {
+            errors.push("❌ This username is already taken");
+          }
+
+          showErrors(errors);
+        } else {
+          const user = {
+            email: email_input.value,
+            username: username_input.value,
+            password: pass_input.value,
+          };
+
+          users.push(user);
+          localStorage.setItem('quizUsers', JSON.stringify(users));
+
+          error_message.className = 'message success';
+          error_message.innerText = "✅ Registration successful! Redirecting to login...";
+          setTimeout(() => {
+            window.location.href = "/index.html";
+          }, 2000);
         }
-
-        localStorage.setItem('quizUser', JSON.stringify(user));
-
-        error_message.className = 'message success';
-        error_message.innerText = "✅ Registration successful! Redirecting to login...";
-        setTimeout(() => {
-          window.location.href = "/index.html";
-        }, 2000);
       } else {
         showErrors(errors);
       }
@@ -46,22 +65,27 @@ if (form) {
       errors = getLoginFormErrors(email_input.value, pass_input.value);
 
       if (errors.length === 0) {
-        const savedUser = JSON.parse(localStorage.getItem('quizUser'));
+        const users = JSON.parse(localStorage.getItem('quizUsers')) || [];
 
-        if (
-          savedUser &&
-          savedUser.email === email_input.value &&
-          savedUser.password === pass_input.value
-        ) {
+        const matchedUser = users.find(
+          user => user.email === email_input.value && user.password === pass_input.value);
+
+        if (matchedUser) {
           error_message.className = 'message success';
-          error_message.innerText = `✅ Welcome back, ${savedUser.username}! Redirecting...`;
+          error_message.innerText = `✅ Welcome back, ${matchedUser.username}! Redirecting...`;
+
           setTimeout(() => {
             window.location.href = "./public/home.html";
           }, 2000);
         } else {
-          showErrors(["❌ Invalid email or password."]);
-        }
+          const emailExists = users.some(user => user.email === email_input.value);
 
+          if (!emailExists) {
+            showErrors(["❌ This email is not registered."]);
+          } else {
+            showErrors(["❌ Incorrect password."]);
+          }
+        }
       } else {
         showErrors(errors);
       }
