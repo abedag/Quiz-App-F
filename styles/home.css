@@ -92,3 +92,31 @@ body {
   transition: background-color 0.3s ease;
 }
 
+.quiz-item a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  text-align: center;
+  color: inherit;
+  width: 100%;
+  height: 100%;
+}
+
+.quiz-item a:hover {
+  color: #ff7200;
+}
+
+.quiz-item img {
+  margin-top: 10px;
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.quiz-item:hover {
+  background-color: #fff;
+  color: #ff7200;
+}
