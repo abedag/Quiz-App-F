@@ -69,3 +69,19 @@ if (form) {
   })
 }
 
+function getSignupFormErrors(email, username, pass, confirm_pass) {
+  const errors = [];
+
+  if (!username) errors.push("Username is required");
+  if (!email) errors.push("Email is required");
+  if (!pass) errors.push("Password is required");
+  if (!confirm_pass) {
+    errors.push("Confirm your password");
+  } else if (pass !== confirm_pass) {
+    errors.push("Passwords do not match");
+  }
+
+  return errors;
+}
+
+
