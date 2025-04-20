@@ -1,0 +1,14 @@
+body {
+  background: linear-gradient(to top, rgba(0,0,0,0.5)50%, rgba(0,0,0,0.5)50%), url(/assets/images/home-background.png);
+  background-size: cover;
+  background-position: center;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  font-size: clamp(15px, 2vw, 35px);
+}
+
