@@ -14,6 +14,15 @@ if (form) {
 
     let errors = [];
 
+    if (email_input.value === "admin@quiz.com" && pass_input.value === "admin123") {
+      error_message.className = 'message success';
+      error_message.innerText = "✅ Welcome Admin! Redirecting to dashboard...";
+      setTimeout(() => {
+        window.location.href = "./public/dashboard.html";
+      }, 2000);
+      return;
+    }
+
     if (username_input && confirm_pass_input) {
 
       errors = getSignupFormErrors(
@@ -45,6 +54,7 @@ if (form) {
             email: email_input.value,
             username: username_input.value,
             password: pass_input.value,
+            scores: {}
           };
 
           users.push(user);
