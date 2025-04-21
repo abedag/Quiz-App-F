@@ -438,6 +438,11 @@ document.querySelectorAll('.choice').forEach(choice => {
     
     selectedChoice.classList.add(classToApply);
 
+    if (classToApply === 'correct') {
+      score += currentQuestion.score;
+      document.querySelector('.score-info strong').textContent = score;
+    }
+
 
   });
 });
