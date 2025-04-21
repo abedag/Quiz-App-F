@@ -443,7 +443,10 @@ document.querySelectorAll('.choice').forEach(choice => {
       document.querySelector('.score-info strong').textContent = score;
     }
 
-
+    setTimeout(() => {
+      selectedChoice.classList.remove(classToApply);
+      getNewQuestion();
+    }, 1000);
   });
 });
 
