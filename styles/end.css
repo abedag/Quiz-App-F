@@ -1,0 +1,42 @@
+.end-container {
+  width: min(90%, 600px);
+  margin: min(5vh, 50px) auto;
+  padding: clamp(1rem, 5%, 2rem);
+  border-radius: clamp(8px, 1.5vw, 12px);
+}
+
+.end-container h1 {
+  font-size: clamp(1.5rem, min(5vw, 2.5rem), 2.5rem);
+  margin-bottom: clamp(1rem, 3vh, 1.5rem);
+}
+
+.final-score {
+  font-size: clamp(1.1rem, min(4vw, 1.5rem), 1.5rem);
+  margin-bottom: clamp(1rem, 4vh, 2rem);
+}
+
+.final-score span {
+  font-size: clamp(1.3rem, min(5vw, 1.8rem), 1.8rem);
+}
+
+.buttons {
+  gap: clamp(0.5rem, 2vw, 1rem);
+}
+
+.btn {
+  padding: 
+    clamp(0.5rem, 2vh, 0.8rem) 
+    clamp(1rem, 4vw, 1.5rem);
+    background-color: #ff7200;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-size: clamp(0.7rem, min(3vw, 1.3rem), 1.3rem);
+
+}
+
+.btn:hover {
+  background-color: #e65c00;
+  transform: translateY(-2px);
+}
