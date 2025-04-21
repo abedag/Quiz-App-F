@@ -53,6 +53,7 @@ body {
   background-color: #3a3a3a;
   border-radius: 6px;
   transition: 0.3s ease;
+  cursor: pointer;
 }
 
 .choice:hover {
