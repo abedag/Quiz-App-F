@@ -33,3 +33,23 @@
   transform: translateY(-2px);
 }
 
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.users-table th, .users-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #444;
+}
+
+.users-table th {
+  background-color: #333;
+  color: #ff7200;
+}
+
+.users-table tr:hover {
+  background-color: #2a2a2a;
+}
