@@ -121,8 +121,11 @@ function getSignupFormErrors(email, username, pass, confirm_pass) {
 function getLoginFormErrors(email, pass) {
   const errors = [];
 
-  if (!email) errors.push("Email is required");
-  if (!pass) errors.push("Password is required");
+  if (!email) errors.push("❌ Email is required");
+  if (!pass) errors.push("❌ Password is required");
+if (username && username.length < 3) errors.push("❌ Username must be at least 3 characters");
+if (pass && pass.length < 6) errors.push("❌ Password must be at least 6 characters");
+if (email && !/^\S+@\S+\.\S+$/.test(email)) errors.push("❌ Invalid email format");
 
   return errors;
 }
