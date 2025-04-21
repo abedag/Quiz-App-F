@@ -386,6 +386,13 @@ const questions = {
     ]
   }
 
+function startGame() {
+  questionCounter = 0;
+  score = 0;
+  availableQuestions = [...questions[quizCategory]];
+  document.querySelector('.score-info strong').textContent = score;
+  getNewQuestion();
+}
 
 
 
