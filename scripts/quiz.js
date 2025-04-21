@@ -400,7 +400,15 @@ function getNewQuestion() {
     const currentUserEmail = localStorage.getItem('currentUser');
     const userIndex = users.findIndex(user => user.email === currentUserEmail);
     
-
+    if (userIndex !== -1) {
+        users[userIndex].scores = users[userIndex].scores || {};
+        users[userIndex].scores[quizCategory] = 
+            Math.max(score, users[userIndex].scores[quizCategory] || 0);
+        localStorage.setItem('quizUsers', JSON.stringify(users));
+    }
+    
+    localStorage.setItem('mostRecentScore', score);
+    return window.location.assign("/public/end.html");
   }
 
 
