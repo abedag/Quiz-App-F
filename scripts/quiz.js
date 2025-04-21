@@ -394,7 +394,17 @@ function startGame() {
   getNewQuestion();
 }
 
+function getNewQuestion() {
+  if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
+    const users = JSON.parse(localStorage.getItem('quizUsers')) || [];
+    const currentUserEmail = localStorage.getItem('currentUser');
+    const userIndex = users.findIndex(user => user.email === currentUserEmail);
+    
 
+  }
+
+
+}
 
 
 
