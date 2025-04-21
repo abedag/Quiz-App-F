@@ -427,5 +427,18 @@ function getNewQuestion() {
   acceptingAnswers = true;
 }
 
+document.querySelectorAll('.choice').forEach(choice => {
+  choice.addEventListener('click', e => {
+    if (!acceptingAnswers) return;
 
+    acceptingAnswers = false;
+    const selectedChoice = e.target;
+    const selectedAnswer = selectedChoice.dataset.number;
+    const classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
+    
+    selectedChoice.classList.add(classToApply);
+
+
+  });
+});
 
