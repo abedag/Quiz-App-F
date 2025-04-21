@@ -450,3 +450,4 @@ document.querySelectorAll('.choice').forEach(choice => {
   });
 });
 
+startGame();
