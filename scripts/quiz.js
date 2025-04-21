@@ -411,7 +411,20 @@ function getNewQuestion() {
     return window.location.assign("/public/end.html");
   }
 
+  questionCounter++;
+  const questionIndex = Math.floor(Math.random() * availableQuestions.length);
+  currentQuestion = availableQuestions[questionIndex];
+  document.querySelector('.q-text').textContent = currentQuestion.question;
 
+  const choices = Array.from(document.querySelectorAll('.choice'));
+  choices.forEach(choice => {
+    const number = choice.dataset.number;
+    choice.textContent = currentQuestion[`choice${number}`];
+    choice.classList.remove('correct', 'incorrect');
+  });
+
+  availableQuestions.splice(questionIndex, 1);
+  acceptingAnswers = true;
 }
 
 
