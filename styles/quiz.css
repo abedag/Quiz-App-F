@@ -47,3 +47,36 @@ body {
   padding-left: 0;
 }
 
+.choice {
+  margin: 5px 0;
+  padding: 8px 12px;
+  background-color: #3a3a3a;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+
+.choice:hover {
+  background-color: #444;
+  box-shadow: 0 0.2rem 0.7rem 0 #444  ;
+}
+
+.choice:active {
+  background-color: #1f1f1f;
+}
+
+/* .correct {
+  background-color: #226622;
+  font-weight: bold;
+}
+
+.incorrect {
+  background-color: #801616;
+  font-weight: bold;
+} */
+
+.points {
+  font-size: 14px;
+  color: #aaa;
+  margin-top: 8px;
+}
+
