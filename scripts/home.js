@@ -7,13 +7,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!localStorage.getItem('quizzes')) {
     const quizzes = [
-      { name: 'Frontend', image: '/assets/frontend-img2.png' },
-      { name: 'Backend', image: '/assets/home-backend.png' },
-      { name: 'C / C++', image: '/assets/home-c.cpp.png' },
-      { name: 'Data Structures', image: '/assets/home-data.structures.png' },
-      { name: 'Version Control (Git)', image: '/assets/home-itgit.png' },
-      { name: 'DevOps & Deployment Section', image: '/assets/home-devops.png' },
-      { name: 'Software Engineering', image: '/assets/home-software.enj.png' }
+      { name: 'Frontend', image: '/assets/images/frontend-img2.png', key: 'frontend' },
+      { name: 'Backend', image: '/assets/images/home-backend.png', key: 'backend' },
+      { name: 'C / C++', image: '/assets/images/home-c.cpp.png', key: 'c_cpp' },
+      { name: 'Data Structures', image: '/assets/images/home-data.structures.png', key: 'algorithms' },
+      { name: 'Version Control (Git)', image: '/assets/images/home-itgit.png', key: 'git' },
+      { name: 'DevOps & Deployment Section', image: '/assets/images/home-devops.png', key: 'devops' },
+      { name: 'Software Engineering', image: '/assets/images/home-software.enj.png', key: 'software_engineering' }
     ];
     localStorage.setItem('quizzes', JSON.stringify(quizzes));
   }
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   quizItems.innerHTML = quizzes.map(quiz => `
     <li class="quiz-item">
-      <a href="/public/quiz.html?quiz=${encodeURIComponent(quiz.name)}">
+      <a href="/public/quiz.html?quiz=${encodeURIComponent(quiz.key)}">
         ${quiz.name}
         <img src="${quiz.image}" alt="${quiz.name}">
       </a>
