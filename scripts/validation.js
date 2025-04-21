@@ -14,7 +14,7 @@ if (form) {
 
     let errors = [];
 
-    if (email_input.value === "admin@quiz.com" && pass_input.value === "admin123") {
+    if (email_input.value === "admin@gmail.com" && pass_input.value === "admin123") {
       error_message.className = 'message success';
       error_message.innerText = "✅ Welcome Admin! Redirecting to dashboard...";
       setTimeout(() => {
@@ -130,4 +130,6 @@ function getLoginFormErrors(email, pass) {
 function showErrors(errors) {
   error_message.className = 'message error';
   error_message.innerText = errors.join(". ");
+  pass_input.value = '';
+  if (confirm_pass_input) confirm_pass_input.value = '';
 }
