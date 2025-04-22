@@ -1,4 +1,5 @@
 const form = document.getElementById('form');
+const form_type = document.getElementById('form-type');
 const email_input = document.getElementById('email-input');
 const username_input = document.getElementById('username-input');
 const pass_input = document.getElementById('pass-input');
@@ -14,16 +15,8 @@ if (form) {
 
     let errors = [];
 
-    if (email_input.value === "admin@gmail.com" && pass_input.value === "admin123") {
-      error_message.className = 'message success';
-      error_message.innerText = "✅ Welcome Admin! Redirecting to dashboard...";
-      setTimeout(() => {
-        window.location.href = "./public/dashboard.html";
-      }, 2000);
-      return;
-    }
 
-    if (username_input && confirm_pass_input) {
+    if (form_type.value == 'register') {
 
       errors = getSignupFormErrors(
         email_input.value,
@@ -70,34 +63,49 @@ if (form) {
         showErrors(errors);
       }
 
-    } else {
+    } else if (form_type.value == 'login') {
 
-      errors = getLoginFormErrors(email_input.value, pass_input.value);
+      if (email_input.value === "admin@gmail.com" && pass_input.value === "admin123") {
+        error_message.className = 'message success';
+        error_message.innerText = "✅ Welcome Admin! Redirecting to dashboard...";
+        localStorage.setItem('currentUser', {
+          email: "admin@gmail.com",
+          username: "Admin",
+          password: "admin123"
+        });
+        setTimeout(() => {
+          window.location.href = "./public/dashboard.html";
+        }, 2000);
+        return;
+      }else{
+        errors = getLoginFormErrors(email_input.value, pass_input.value);
 
-      if (errors.length === 0) {
-        const users = JSON.parse(localStorage.getItem('quizUsers')) || [];
-
-        const matchedUser = users.find(
-          user => user.email === email_input.value && user.password === pass_input.value);
-
-        if (matchedUser) {
-          error_message.className = 'message success';
-          error_message.innerText = `✅ Welcome back, ${matchedUser.username}! Redirecting...`;
-
-          setTimeout(() => {
-            window.location.href = "./public/home.html";
-          }, 2000);
-        } else {
-          const emailExists = users.some(user => user.email === email_input.value);
-
-          if (!emailExists) {
-            showErrors(["❌ This email is not registered."]);
+        if (errors.length === 0) {
+          const users = JSON.parse(localStorage.getItem('quizUsers')) || [];
+  
+          const matchedUser = users.find(
+            user => user.email === email_input.value && user.password === pass_input.value);
+  
+          if (matchedUser) {
+            error_message.className = 'message success';
+            error_message.innerText = `✅ Welcome back, ${matchedUser.username}! Redirecting...`;
+            localStorage.setItem('currentUser', JSON.stringify(matchedUser));
+  
+            setTimeout(() => {
+              window.location.href = "./public/home.html";
+            }, 2000);
           } else {
-            showErrors(["❌ Incorrect password."]);
+            const emailExists = users.some(user => user.email === email_input.value);
+  
+            if (!emailExists) {
+              showErrors(["❌ This email is not registered."]);
+            } else {
+              showErrors(["❌ Incorrect password."]);
+            }
           }
+        } else {
+          showErrors(errors);
         }
-      } else {
-        showErrors(errors);
       }
     }
   })
