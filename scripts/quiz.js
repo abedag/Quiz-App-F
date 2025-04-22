@@ -397,19 +397,39 @@ function startGame() {
 function getNewQuestion() {
   if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
     const users = JSON.parse(localStorage.getItem('quizUsers')) || [];
-    const currentUserEmail = localStorage.getItem('currentUser');
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    const currentUserEmail = currentUser.email;
+
     const userIndex = users.findIndex(user => user.email === currentUserEmail);
-    
+
     if (userIndex !== -1) {
+        // Make sure scores object exists
         users[userIndex].scores = users[userIndex].scores || {};
+        currentUser.scores = currentUser.scores || {};
+
+        // Save the score for the current quiz category
         users[userIndex].scores[quizCategory] = 
             Math.max(score, users[userIndex].scores[quizCategory] || 0);
+
+        currentUser.scores[quizCategory] = 
+            Math.max(score, currentUser.scores[quizCategory] || 0);
+
+        // Save mostRecentScore in both user and currentUser
+        users[userIndex].mostRecentScore = score;
+        currentUser.mostRecentScore = score;
+
+        // Save updates back to localStorage
         localStorage.setItem('quizUsers', JSON.stringify(users));
+        localStorage.setItem('currentUser', JSON.stringify(currentUser));
     }
-    
+
+    // You can still keep this line optionally
     localStorage.setItem('mostRecentScore', score);
+
     return window.location.assign("/public/end.html");
-  }
+}
+
+
 
   questionCounter++;
   const questionIndex = Math.floor(Math.random() * availableQuestions.length);
