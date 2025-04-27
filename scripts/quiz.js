@@ -423,7 +423,6 @@ function getNewQuestion() {
         localStorage.setItem('currentUser', JSON.stringify(currentUser));
     }
 
-    // You can still keep this line optionally
     localStorage.setItem('mostRecentScore', score);
 
     return window.location.assign("/public/end.html");
