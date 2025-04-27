@@ -39,13 +39,18 @@
   position: relative;
 }
 
+.text-container {
+  min-width: 400px;
+  flex: 1;
+}
+
 .content h2 {
   font-family: 'Times New Roman';
   font-size: clamp(24px, 4vw, 40px);
   padding-left: 20px;
   margin-top: 9%;
   letter-spacing: 2px;
-  width: 55vw;
+  width: 93%;
 }
 
 .content span {
@@ -60,7 +65,7 @@
   letter-spacing: 1.2px;
   line-height: 1.8em;
   font-size: clamp(14px, 1.3vw, 16px);
-  width: 50vw;
+  width: 80%;
 }
 
 .form {
@@ -74,6 +79,7 @@
   padding: 25px;
   margin: 0 auto;
   margin-top: -3rem;
+  flex-shrink: 0;
 }
 
 .form h2 {  
