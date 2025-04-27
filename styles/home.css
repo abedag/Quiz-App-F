@@ -120,3 +120,31 @@ body {
   background-color: #fff;
   color: #ff7200;
 }
+
+.control {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: larger;
+  width: 15vw;
+  height: 9vh;
+  padding: 12px 24px;
+  background-color: #ff7200;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  margin: 60px;
+  transition: all 0.3s ease;
+
+}
+
+.btn:hover {
+  background-color: #e65c00;
+  transform: translateY(-2px);
+}
